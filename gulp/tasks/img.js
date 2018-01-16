@@ -5,8 +5,8 @@ module.exports = function() {
     });
 
     $.gulp.task('img:build', () => {
-        return $.gulp.src('./dev/static/img/**/*.{png,jpg,gif}')
-            .pipe($.gp.tinypng(YOUR_API_KEY))
+        return $.gulp.src(['./dev/static/img/**/*', '!./dev/static/img/svg/**/*'])
+            // .pipe($.gp.tinypng(YOUR_API_KEY))
             .pipe($.gulp.dest('./build/static/img/'));
     });
 };

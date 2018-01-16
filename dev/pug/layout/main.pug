@@ -20,7 +20,8 @@ html(lang="ru-RU")
         <![endif]-->
 
     body
-        .main-wrapper
+        - modPage = modPage || ''
+        div(class='main-wrapper' + ' ' + modPage)
             .wrapper
                 include ../modules/header
 
